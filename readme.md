@@ -1,1 +1,1 @@
-# giPrice calculator
+# Price calculator
