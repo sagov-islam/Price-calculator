@@ -559,6 +559,25 @@ hr {
     position: absolute;
     right: 10px;
     top: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    border: 1px solid var(--red);
+    transition: background-color 0.2s;
+}
+
+.modal__btn-close img {
+    position: absolute;
+    top: 9.4px;
+    right: 10.9px;
+    height: 15px;
+    width: 13px;
+}
+
+.modal__btn-close:hover {
+    background-color: rgb(255, 240, 240);
+    transition: 0.2s;
+
 }
 .modal__btn-close img {
     right: 10.5px;
