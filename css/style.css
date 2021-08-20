@@ -476,12 +476,15 @@ hr {
 
 
 /* saidbar */
-.saidbar {
+.sidebar {
+    position: sticky;
+    top: 20px;
+    right: 0px;
     margin-left: 44px;
     height: 175px;
 }
 
-.saidbar__result {
+.sidebar__result {
     width: 100%;
     border: 1px solid var(--blue);
     border-radius: 5px;
@@ -495,7 +498,7 @@ hr {
     background-color: #EDF5FF;
 }
 
-.saidbar__tasks-sum {
+.sidebar__tasks-sum {
     width: 100%;
     height: 36px;
     background-color: var(--silver);
@@ -508,7 +511,7 @@ hr {
     color: var(--black);
 }
 
-.saidbar__button-clean {
+.sidebar__button-clean {
     width: 100%;
     margin-top: 15px;
 }
