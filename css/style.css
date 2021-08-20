@@ -380,6 +380,7 @@ hr {
     width: 38px;
     border: 1px solid var(--red);
     border-radius: 100%;
+    transition: background-color 0.2s;
 }
 
 .tasks__btn-delete img {
@@ -388,6 +389,11 @@ hr {
     right: 9.5px;
     height: 15px;
     width: 13px;
+}
+
+.tasks__btn-delete:hover {
+    background-color: rgb(255, 240, 240);
+    transition: 0.2s;
 }
 
 /* Item content */
@@ -430,10 +436,6 @@ hr {
     border: 1px solid #D4D4D4;
 }
 
-.tasks__item-counter-arrow:hover {
-    background-color: rgb(248, 248, 248);
-}
-
 .tasks__item-counter-arrow:nth-child(1) {
    position: relative;
    left: -1px;
@@ -448,6 +450,10 @@ hr {
 .tasks__item-counter-numbers {
     color: #424242;
     font-weight: 700;
+}
+
+.tasks__item-counter-arrow:hover {
+    background-color: rgb(248, 248, 248);
 }
 
 /* Price */
