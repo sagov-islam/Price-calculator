@@ -372,10 +372,21 @@ hr {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    position: relative;
+    margin-left: 50px;
+    border-radius: 5px;
+}
+
+.tasks-item:nth-child(even) {
+    background-color: var(--silver);
+    height: 62px;
+
 }
 
 .tasks__btn-delete {
-    position: relative;
+    background-color: white;
+    position: absolute;
+    left: -55px;
     height: 36px;
     width: 38px;
     border: 1px solid var(--red);
@@ -386,7 +397,7 @@ hr {
 .tasks__btn-delete img {
     position: absolute;
     top: 9.4px;
-    right: 9.5px;
+    right: 10.9px;
     height: 15px;
     width: 13px;
 }
@@ -401,11 +412,8 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 21px;
-    height: 62px;
     width: 100%;
     border-radius: 5px;
-    background-color: var(--silver);
 }
 
 .tasks__item-title {
