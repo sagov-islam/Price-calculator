@@ -53,10 +53,15 @@ li {
 
 /* Header */
 
-.header__bg {
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
     height: 98px;
     width: 100%;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    background-color:white;
 }
 
 .header__header-content {
@@ -330,7 +335,7 @@ li {
 /* Main content */
 
 .main__content {
-    margin-top: 37px;
+    margin-top: 135px;
     display: grid;
     grid-template-columns: 880px 1fr;
     
@@ -486,7 +491,7 @@ hr {
 /* saidbar */
 .sidebar {
     position: sticky;
-    top: 20px;
+    top: 145px;
     right: 0px;
     margin-left: 44px;
     height: 175px;
