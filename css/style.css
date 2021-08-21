@@ -201,7 +201,8 @@ li {
 .header__select-lang-btn{
     width: 248px;
     text-align: start;
-    padding: 11px 15px;
+    padding: 0 15px;
+    height: 47px;
     font-size: 16px;
     border: 0.5px solid #C2C2C2;
     border-radius: 5px;
