@@ -206,11 +206,11 @@ li {
     border: 0.5px solid #C2C2C2;
     border-radius: 5px;
     background-color: white;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
     color: #A6A6A6;
     display: flex;
     justify-content: space-between;
-    transition: 0.2s;
+    align-items: center;
+    transition: 0.1s;
 }
 
 .svg-arrow {
@@ -220,8 +220,8 @@ li {
 
 .header__select-lang-btn:hover {
     border-color: #adadad;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.19);
-    transition: 0.2s;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.10);
+    transition: 0.1s;
 }
 
 .header__select-lang-btn:hover .svg-arrow {
@@ -290,11 +290,13 @@ li {
     width: 61px;
     height: 47px;
     background-color: white;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    transition: 0.1s;
 }
 
 .header__select-theme:hover {
     border-color: #adadad;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.10);
+    transition: 0.1s;
 }
 
 
