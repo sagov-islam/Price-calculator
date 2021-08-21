@@ -174,3 +174,9 @@ hr {
 .modal__content h2 {
     color: white;
 }
+
+.btn-no:hover {
+    background-color: #2c8bff1c;
+    border-color: var(--blue);
+    transition: 0.2s;
+}

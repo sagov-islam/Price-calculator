@@ -597,7 +597,31 @@ hr {
 
 .modal__btn {
     margin-top: 20px;
-    width: 220px;
+    width: 210px;
+}
+
+.modal__btn:nth-child(2) {
+    margin-right: 20px;
+}
+
+.btn-no {
+    background-color: inherit;
+    border: 3px solid #55A3FF;
+    height: 47px;
+    border-radius: 5px;
+    color: var(--blue);
+    font-family: var(--open-sans);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 133%;
+    transition: background-color 0.2s;
+
+}
+
+.btn-no:hover {
+    background-color: #e0eeff;
+    border-color: var(--blue);
+    transition: 0.2s;
 }
 
 
