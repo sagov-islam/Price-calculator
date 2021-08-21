@@ -144,12 +144,12 @@ li {
     background-color: var(--red);
     border-radius: 100%;
     position: absolute;
-    left: 12px;
-    top: 14px;
+    left: 101px;
+    top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1px 0.8px 0 0;
+    padding: 0.5px 0.8px 0 0;
 }
 
 .error-svg-price {
@@ -158,17 +158,12 @@ li {
     background-color: var(--red);
     border-radius: 100%;
     position: absolute;
-    left: 332px;
-    top: 14px;
+    left: 426px;
+    top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1px 0.8px 0 0;
-}
-
-.error-svg img {
-    height: 8px;
-    width: 8px;
+    padding: 0.5px 0.8px 0 0;
 }
 
 .input--error {
@@ -388,7 +383,6 @@ hr {
 .tasks-item:nth-child(even) {
     background-color: var(--silver);
     height: 62px;
-
 }
 
 .tasks__btn-delete {
