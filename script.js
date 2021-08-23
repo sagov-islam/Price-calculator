@@ -50,7 +50,11 @@ function selectThem() {
     }
     btnMoon.addEventListener('click', () => {
         removeAndAdd(btnSun,btnMoon)
-        head.innerHTML += '<link id="dark-theme" rel="stylesheet" href="css/dark-mode.css">'
+        const link = document.createElement('link')
+        link.id = 'dark-theme';
+        link.rel = 'stylesheet';
+        link.href = 'css/dark-mode.css';
+        head.append(link);
     });
     btnSun.addEventListener('click', () => {
         removeAndAdd(btnMoon,btnSun)
