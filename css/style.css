@@ -74,6 +74,10 @@ li {
 
 /* Left header */
 
+.header__left-content {
+    position: relative;
+}
+
 .header__input-task {
     margin-right: 20px;
     width: 300px;
@@ -139,31 +143,15 @@ li {
 /* При ошибке */
 
 .error-svg-task {
-    height: 19px;
-    width: 19px;
-    background-color: var(--red);
-    border-radius: 100%;
     position: absolute;
-    left: 101px;
-    top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5px 0.8px 0 0;
+    top: 14px;
+    left: 14px;
 }
 
 .error-svg-price {
-    height: 19px;
-    width: 19px;
-    background-color: var(--red);
-    border-radius: 100%;
     position: absolute;
-    left: 426px;
-    top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5px 0.8px 0 0;
+    top: 14px;
+    left: 338px;
 }
 
 .input--error {
