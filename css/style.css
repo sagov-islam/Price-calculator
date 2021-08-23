@@ -424,7 +424,6 @@ hr {
     width: 38px;
     border: 1px solid var(--red);
     border-radius: 100%;
-    transition: background-color 0.2s;
 }
 
 .tasks__btn-delete img {
@@ -437,7 +436,6 @@ hr {
 
 .tasks__btn-delete:hover {
     background-color: rgb(255, 240, 240);
-    transition: 0.2s;
 }
 
 /* Item content */
