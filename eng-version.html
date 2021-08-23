@@ -16,13 +16,13 @@
             <div class="container">
                 <div class="header__header-content">
                     <div class="header__left-content">
-                        <span class="error-svg-task hide"><img src="img/error.svg" alt="error"></span><input class="header__input-task input-text" type="text" placeholder="Название задачи">
-                        <span class="error-svg-price hide"><img src="img/error.svg" alt="error"></span><input class="header__input-price input-text" type="text" placeholder="Цена">
-                        <button class="header__button-add-task button">Добавить</button>
+                        <span class="error-svg-task hide"><img src="img/error.svg" alt="error"></span><input class="header__input-task input-text" type="text" placeholder="Task name">
+                        <span class="error-svg-price hide"><img src="img/error.svg" alt="error"></span><input class="header__input-price input-text" type="text" placeholder="Price">
+                        <button class="header__button-add-task button">Add</button>
                     </div>
                     <div class="header__right-content">
                         <div class="header__select-lang">
-                            <button class="header__select-lang-btn" id="select-lang"><span id="lang-span">Язык</span><div class="svg-arrow" id="svg-arrow"></div></button>
+                            <button class="header__select-lang-btn" id="select-lang"><span id="lang-span">Language</span><div class="svg-arrow" id="svg-arrow"></div></button>
                             <div class="header__lang-list hide">
                                 <button class="lang" id="ru">Русский</button>
                                 <button class="lang" id="eng">English</button>
@@ -44,10 +44,10 @@
 
             <section class="hints">
                 <ul class="hints__list">
-                    <li class="hints__item">Название задачи</li>
-                    <li class="hints__item">Количество</li>
-                    <li class="hints__item">Цена</li>
-                    <li class="hints__item">Итого</li>
+                    <li class="hints__item">Task name</li>
+                    <li class="hints__item">Number</li>
+                    <li class="hints__item">Price</li>
+                    <li class="hints__item">Result</li>
                 </ul>
                 <hr>
             </section>
@@ -103,8 +103,8 @@
 
             <aside class="sidebar">
                 <div class="sidebar__result">65 000</div>
-                <div class="sidebar__tasks-sum"><p class="sidebar__sum-title">Количество задач</p><p class="sidebar__sum">4</p></div>
-                <button class="sidebar__button-clean button">Очистить список задач</button>
+                <div class="sidebar__tasks-sum"><p class="sidebar__sum-title">Tasks</p><p class="sidebar__sum">4</p></div>
+                <button class="sidebar__button-clean button">Clear task list</button>
             </aside>
         </div>
     </main>
@@ -115,9 +115,9 @@
                 <img src="img/delete.svg" alt="df">
             </button>
             <div class="modal__content">
-                <h2>Вы точно хотите очистить список задач?</h2>
-                <button class="modal__btn button">Да</button>
-                <button class="modal__btn btn-no">Нет</button>
+                <h2>Do you really want to clean the task list?</h2>
+                <button class="modal__btn button">Yes</button>
+                <button class="modal__btn btn-no">No</button>
             </div>
             
         </div>

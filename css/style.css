@@ -361,9 +361,35 @@ hr {
     display: flex;
     list-style: none;
     margin-bottom: 11px;
+    position: relative;
+    background-color:red;
 }
 
+.hints__item {
+    position: absolute;
+    top: -18px;
+}
 .hints__item:nth-child(1) {
+    position: absolute;
+    left: 0px;
+}
+
+.hints__item:nth-child(2) {
+    position: absolute;
+    left: 367px;
+}
+
+.hints__item:nth-child(3) {
+    position: absolute;
+    left: 668px;
+}
+
+.hints__item:nth-child(4) {
+    position: absolute;
+    left: 871px;
+}
+
+/* .hints__item:nth-child(1) {
     margin-right: 254px;
 }
 .hints__item:nth-child(2) {
@@ -371,7 +397,7 @@ hr {
 }
 .hints__item:nth-child(3) {
     margin-right: 166px;
-}
+} */
 
 
 /* tasks */
@@ -654,4 +680,10 @@ hr {
 }
 .show-block {
     display: block;
+}
+.rotate {
+    transform: rotate(180deg);
+}
+.shadow {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
 }
