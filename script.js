@@ -109,6 +109,7 @@ function tolocal() {
 if (localStorage.getItem('tasks')) {
     list.innerHTML = localStorage.getItem('tasks')
     deleteTask()
+    tasksLength()
 }
 
 
