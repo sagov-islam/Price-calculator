@@ -158,6 +158,7 @@ li {
     border: 2px solid var(--red);
     background: rgba(255, 0, 0, 0.1);
     padding: 13px 16px 14px 38px;
+    color: var(--red)
 
 }
 
