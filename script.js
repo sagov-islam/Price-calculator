@@ -10,10 +10,6 @@ const langBtn = document.querySelector('.header__select-lang-btn'),
 
 // ---------------------------------------------------------------------------
 const arrayTasks = [];
-const arrayButtonsDelete = [];
-
-
-
 
 
 function addTask(deleteTask) {
@@ -64,11 +60,12 @@ function addTask(deleteTask) {
             inputRemoveError(inputPrice, svgPrice, 'Введите число');
 
             const task = document.createElement('li');
-            const btnDelete = document.createElement('button');
             task.classList.add('tasks-item');
-            btnDelete.classList.add('tasks__btn-delete');
 
             task.innerHTML = `
+            <button class="tasks__btn-delete">
+                <img src="img/delete.svg" alt="Button - delete">
+            </button>
             <div class="tasks__item-content">
                 <p class="tasks__item-title">${tValue}</p>
                 <div class="tasks__item-counter">
@@ -84,13 +81,11 @@ function addTask(deleteTask) {
                     <p>${pValue}</p>
                 </div>
             </div>`;
-            btnDelete.innerHTML = '<img src="img/delete.svg" alt="Button - delete">';
-        
-        task.prepend(btnDelete);
         taskList.append(task);
 
         arrayTasks[arrayTasks.length] = task;
-        arrayButtonsDelete[arrayButtonsDelete.length] = btnDelete;
+        tolocal()
+
         }
 
         deleteTask()
@@ -101,15 +96,42 @@ function addTask(deleteTask) {
 }
 addTask(deleteTask)
 
+
+
+
+// LocalStorage
+const list = document.querySelector('.tasks__list');
+let tasks;
+function tolocal() {
+    tasks = list.innerHTML;
+    localStorage.setItem('tasks', tasks)
+}
+if (localStorage.getItem('tasks')) {
+    list.innerHTML = localStorage.getItem('tasks')
+    deleteTask()
+}
+
+
+
+
+// Delete Tasks
 function deleteTask() {
-    arrayButtonsDelete.forEach((item, i) => {
+    const buttonsDelete = document.querySelectorAll('.tasks__btn-delete');
+    buttonsDelete.forEach((item, i) => {
+        const tasks = document.querySelectorAll('.tasks-item');
         item.addEventListener('click', () => {
-            arrayTasks[i].remove();
+            tasks[i].remove();
             tasksLength()
+            tolocal()
         });
     });
 }
 
+
+
+
+
+// Task Length
 function tasksLength () {
     const task = document.querySelectorAll('.tasks-item');
     const sum = document.querySelector('.sidebar__sum');
@@ -119,24 +141,7 @@ function tasksLength () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Select Language
 function selectLang() {
     langBtn.addEventListener('click', () => {
         langList.classList.toggle('hide');
@@ -169,6 +174,11 @@ function selectLang() {
 selectLang();
 
 
+
+
+
+
+// Select Theme
 function selectThem() {
     function removeAndAdd(remove, add) {
         remove.classList.remove('hide')
