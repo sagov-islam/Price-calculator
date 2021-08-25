@@ -115,7 +115,7 @@ li {
     background-color: inherit;
     border: 1px solid var(--blue);
     font-family: var(--open-sans);
-    font-size: 13 px;
+    font-size: 13px;
     border-radius: 5px;
     height: 47px;
     transition: 0.2s;
@@ -192,12 +192,12 @@ li {
     font-size: 16px;
     border: 0.5px solid #C2C2C2;
     border-radius: 5px;
-    background-color: white;
+    background-color: inherit;
     color: #A6A6A6;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: 0.1s;
+    transition: box-shadow 0.1gits;
 }
 
 .svg-arrow {
@@ -212,6 +212,7 @@ li {
 
 .header__select-lang-btn:hover {
     border-color: #adadad;
+    background-color: white;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.10);
     transition: 0.1s;
 }
