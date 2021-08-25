@@ -166,6 +166,7 @@ function selectLang() {
             if (event.id !== 'select-lang' && event.id !== 'lang-span' && event.id !== 'svg-arrow') {
                 langList.classList.add('hide');
                 svgArrow.classList.remove('rotate')
+                langBtn.classList.remove('shadow');
             }
         });
     }
