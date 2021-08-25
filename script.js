@@ -56,8 +56,8 @@ function addTask(deleteTask) {
         } else if (isNaN(pValue)) {
             inputAddError(inputPrice, svgPrice, 'Только цифры');
         } else {
-            inputRemoveError(inputTask, svgTask, 'Введите задачу');
-            inputRemoveError(inputPrice, svgPrice, 'Введите число');
+            inputRemoveError(inputTask, svgTask, 'Название задачи');
+            inputRemoveError(inputPrice, svgPrice, 'Цена');
 
             const task = document.createElement('li');
             task.classList.add('tasks-item');
