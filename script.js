@@ -50,6 +50,9 @@ function addTask(deleteTask) {
         if (tValue == '' && pValue == '') {
             inputAddError(inputTask, svgTask, 'Вы не ввели задачу');
             inputAddError(inputPrice, svgPrice, 'Вы не ввели цену');
+        } else if (tValue == '' && isNaN(pValue)) {
+            inputAddError(inputPrice, svgPrice, 'Только цифры');
+            inputAddError(inputTask, svgTask, 'Вы не ввели задачу');
         } else if (tValue == '') {
             inputAddError(inputTask, svgTask, 'Вы не ввели задачу');
         } else if (pValue == '') {
