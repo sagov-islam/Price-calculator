@@ -197,7 +197,6 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: box-shadow 0.1gits;
 }
 
 .svg-arrow {
@@ -312,6 +311,7 @@ li {
 .dark-theme {
     background-color: #414141;
     border: 0.5px solid #676767;;
+    transition: 0.2s;
 }
 
 .sun {
@@ -320,6 +320,16 @@ li {
     right: 15px;
     opacity: 70%;
     transition: 0.2s;
+    opacity: 70%;
+}
+
+.dark-theme:hover {
+    border: 0.5px solid #818181;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
+}
+
+.dark-theme:hover .sun {
     opacity: 100%;
 }
 
