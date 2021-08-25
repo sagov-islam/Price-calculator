@@ -47,7 +47,10 @@ function addTask(deleteTask) {
     addBtn.addEventListener('click', () => {
         let tValue = inputTask.value
         let pValue = inputPrice.value
-        if (tValue == '') {
+        if (tValue == '' && pValue == '') {
+            inputAddError(inputTask, svgTask, 'Вы не ввели задачу');
+            inputAddError(inputPrice, svgPrice, 'Вы не ввели цену');
+        } else if (tValue == '') {
             inputAddError(inputTask, svgTask, 'Вы не ввели задачу');
         } else if (pValue == '') {
             inputAddError(inputPrice, svgPrice, 'Вы не ввели цену');
