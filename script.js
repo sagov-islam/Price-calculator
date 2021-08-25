@@ -185,18 +185,24 @@ function selectThem() {
         remove.classList.remove('hide')
         add.classList.add('hide')
     }
-    btnMoon.addEventListener('click', () => {
+    function addDarkTheme() {
         removeAndAdd(btnSun,btnMoon)
         const link = document.createElement('link')
         link.id = 'dark-theme';
         link.rel = 'stylesheet';
         link.href = 'css/dark-mode.css';
         head.append(link);
-    });
+        localStorage.setItem('themes', 'dark-theme') 
+    }
+
+    btnMoon.addEventListener('click', addDarkTheme);
     btnSun.addEventListener('click', () => {
         removeAndAdd(btnMoon,btnSun)
         const darkTheme = document.querySelector('#dark-theme')
         darkTheme.remove();
+        localStorage.setItem('themes', 'white-theme')
     });
+
+    if (localStorage.getItem('themes') == 'dark-theme') { addDarkTheme() }
 }
 selectThem();
