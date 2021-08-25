@@ -112,6 +112,7 @@ li {
 }
 
 .input-text {
+    background-color: inherit;
     border: 1px solid var(--blue);
     font-family: var(--open-sans);
     font-size: 13 px;
