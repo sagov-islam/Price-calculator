@@ -88,6 +88,7 @@ function addTask(deleteTask) {
                 </div>
             </div>`;
         taskList.append(task);
+        AddAllCounterNumInArray()
 
         arrayTasks[arrayTasks.length] = task;
         tolocal()
@@ -218,33 +219,53 @@ selectThem();
 
 
 // Counter
+
+let counterNum = []
+
+function AddAllCounterNumInArray() {
+    const countersList = document.querySelectorAll('.tasks__item-counter-numbers');
+    countersList.forEach((item,i) => {
+        counterNum[i] = +item.innerHTML
+    });
+}
+AddAllCounterNumInArray()
+
+
 function counter() {
     const minus = document.querySelectorAll('.minus')
     const plus = document.querySelectorAll('.plus')
-    const counters = document.querySelectorAll('.tasks__item-counter-numbers')
-
-    let plusIndex
-    let minusIndex
-
-    function counterPlus() {
-        const counterNumber = parseFloat(counters[plusIndex].innerHTML)
-        let count = counterNumber;
-        return function () {
-            return ++count
-        }
-    }
+    let counters = document.querySelectorAll('.tasks__item-counter-numbers')
 
     // PLUS
-    plus.forEach((item, i) => {
+   plus.forEach(( item, i ) => {
         item.addEventListener('click', () => {
-            counters[i].innerHTML = newCounterPlus()
+            counterNum[i] += 1
+            ifCounterSmallerThanZero(i)
+            counters[i].innerHTML = counterNum[i]
+            console.log(counterNum);
+
             tolocal()
         });
-        plusIndex = i
-        let newCounterPlus = counterPlus()
-    })
+   });
 
 
     // MINUS
+    minus.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            counterNum[i] -= 1
+            ifCounterSmallerThanZero(i)
+            counters[i].innerHTML = counterNum[i]
+            console.log(counterNum);
+            tolocal()
+        });
+    });
+
+    function ifCounterSmallerThanZero(i) {
+        if (counterNum[i] < 1) {
+            counterNum[i] = 0
+        }
+    }
+
+    
 }
 counter()
