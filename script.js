@@ -75,11 +75,11 @@ function addTask(deleteTask) {
             <div class="tasks__item-content">
                 <p class="tasks__item-title">${tValue}</p>
                 <div class="tasks__item-counter">
-                    <button class="tasks__item-counter-arrow">
+                    <button class="tasks__item-counter-arrow minus">
                         <img src="img/minus.svg" alt="minus">
                     </button>
-                    <div class="tasks__item-counter-numbers">1</div>
-                    <button class="tasks__item-counter-arrow">
+                    <div class="tasks__item-counter-numbers">0</div>
+                    <button class="tasks__item-counter-arrow plus">
                         <img src="img/plus.svg" alt="plus">
                     </button>
                 </div>
@@ -91,9 +91,9 @@ function addTask(deleteTask) {
 
         arrayTasks[arrayTasks.length] = task;
         tolocal()
-
+        counter()
         }
-
+        
         deleteTask()
         tasksLength()
     })
@@ -213,3 +213,38 @@ function selectThem() {
     if (localStorage.getItem('themes') == 'dark-theme') { addDarkTheme() }
 }
 selectThem();
+
+
+
+
+// Counter
+function counter() {
+    const minus = document.querySelectorAll('.minus')
+    const plus = document.querySelectorAll('.plus')
+    const counters = document.querySelectorAll('.tasks__item-counter-numbers')
+
+    let plusIndex
+    let minusIndex
+
+    function counterPlus() {
+        const counterNumber = parseFloat(counters[plusIndex].innerHTML)
+        let count = counterNumber;
+        return function () {
+            return ++count
+        }
+    }
+
+    // PLUS
+    plus.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            counters[i].innerHTML = newCounterPlus()
+            tolocal()
+        });
+        plusIndex = i
+        let newCounterPlus = counterPlus()
+    })
+
+
+    // MINUS
+}
+counter()
