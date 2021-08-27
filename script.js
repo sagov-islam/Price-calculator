@@ -78,7 +78,7 @@ function addTask(deleteTask) {
                     <button class="tasks__item-counter-arrow minus">
                         <img src="img/minus.svg" alt="minus">
                     </button>
-                    <div class="tasks__item-counter-numbers">0</div>
+                    <div class="tasks__item-counter-numbers">1</div>
                     <button class="tasks__item-counter-arrow plus">
                         <img src="img/plus.svg" alt="plus">
                     </button>
@@ -88,11 +88,13 @@ function addTask(deleteTask) {
                 </div>
             </div>`;
         taskList.append(task);
-        AddAllCounterNumInArray()
 
         arrayTasks[arrayTasks.length] = task;
         tolocal()
+
         counter()
+        AddAllCounterNumInArray()
+
         }
         
         deleteTask()
@@ -220,7 +222,7 @@ selectThem();
 
 // Counter
 
-let counterNum = []
+const counterNum = []
 
 function AddAllCounterNumInArray() {
     const countersList = document.querySelectorAll('.tasks__item-counter-numbers');
@@ -231,31 +233,30 @@ function AddAllCounterNumInArray() {
 AddAllCounterNumInArray()
 
 
+
 function counter() {
-    const minus = document.querySelectorAll('.minus')
-    const plus = document.querySelectorAll('.plus')
+    list.innerHTML = localStorage.getItem('tasks')
+    deleteTask()
+
+    let minus = document.querySelectorAll('.minus')
+    let plus = document.querySelectorAll('.plus')
     let counters = document.querySelectorAll('.tasks__item-counter-numbers')
 
     // PLUS
    plus.forEach(( item, i ) => {
         item.addEventListener('click', () => {
             counterNum[i] += 1
-            ifCounterSmallerThanZero(i)
-            counters[i].innerHTML = counterNum[i]
-            console.log(counterNum);
-
+            counters[i].textContent = counterNum[i]
             tolocal()
         });
    });
-
 
     // MINUS
     minus.forEach((item, i) => {
         item.addEventListener('click', () => {
             counterNum[i] -= 1
             ifCounterSmallerThanZero(i)
-            counters[i].innerHTML = counterNum[i]
-            console.log(counterNum);
+            counters[i].textContent = counterNum[i]
             tolocal()
         });
     });
@@ -265,7 +266,5 @@ function counter() {
             counterNum[i] = 0
         }
     }
-
-    
 }
 counter()
