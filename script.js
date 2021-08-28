@@ -227,8 +227,6 @@ function AddAllCounterNumInArray() {
 }
 AddAllCounterNumInArray()
 
-
-
 function counter() {
     list.innerHTML = localStorage.getItem('tasks')
     deleteTask()
@@ -268,15 +266,9 @@ function counter() {
 counter()
 
 
-// function priceAddition() {
-//     let result = 0
-//     const priceValue = document.querySelectorAll('.tasks-item-price p');
-//     const sidebarResult = document.querySelector('.sidebar__result');
-//     priceValue.forEach(item => {
-//         result += (parseFloat(item.innerHTML));
-//         sidebarResult.innerHTML = result
-//     });
-// }
+
+
+// Result
 function priceAddition() {
     const sidebarResult = document.querySelector('.sidebar__result');
     let result = 0
@@ -288,4 +280,7 @@ function priceAddition() {
         result += (priceArrayNumber[i] * item)
     })
     sidebarResult.innerHTML = result
+    if (sidebarResult.innerHTML.length >= 17) {
+        sidebarResult.style.fontSize = '15px'
+    }
 }
