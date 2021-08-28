@@ -10,6 +10,9 @@ const langBtn = document.querySelector('.header__select-lang-btn'),
 
 // ---------------------------------------------------------------------------
 const arrayTasks = [];
+let counterNum = [];
+const counterPrice = [];
+let priceArrayNumber = [];
 
 
 function addTask(deleteTask) {
@@ -88,20 +91,15 @@ function addTask(deleteTask) {
                 </div>
             </div>`;
         taskList.append(task);
-
         arrayTasks[arrayTasks.length] = task;
         tolocal()
-
         counter()
         AddAllCounterNumInArray()
-
+        priceAddition()
         }
-        
         deleteTask()
         tasksLength()
     })
-    
-
 }
 addTask(deleteTask)
 
@@ -119,6 +117,8 @@ if (localStorage.getItem('tasks')) {
     list.innerHTML = localStorage.getItem('tasks')
     deleteTask()
     tasksLength()
+    AddAllCounterNumInArray()
+    priceAddition()
 }
 
 
@@ -131,13 +131,15 @@ function deleteTask() {
         const tasks = document.querySelectorAll('.tasks-item');
         item.addEventListener('click', () => {
             tasks[i].remove();
+            delete counterNum[i]
+            delete priceArrayNumber[i]
+            priceAddition()
             tasksLength()
             tolocal()
         });
     });
 }
-
-
+deleteTask()
 
 
 
@@ -158,17 +160,14 @@ function selectLang() {
         langBtn.classList.toggle('shadow');
         svgArrow.classList.toggle('rotate');
     });
-    
     langList.addEventListener('click', (event) => {
         if (event.target.id == 'eng') {
-            location.href = 'eng-version.html';
+            location.href = 'index-eng.html';
 
         } else if (event.target.id == 'ru') {
             location.href = 'index.html'
         }
     });
-
-
     function closeLangListWhenClickWindow () {
         window.addEventListener('click', (e) => {
             const event = e.target;
@@ -180,7 +179,6 @@ function selectLang() {
         });
     }
     closeLangListWhenClickWindow()
-
 }
 selectLang();
 
@@ -221,9 +219,6 @@ selectThem();
 
 
 // Counter
-
-const counterNum = []
-
 function AddAllCounterNumInArray() {
     const countersList = document.querySelectorAll('.tasks__item-counter-numbers');
     countersList.forEach((item,i) => {
@@ -247,6 +242,7 @@ function counter() {
         item.addEventListener('click', () => {
             counterNum[i] += 1
             counters[i].textContent = counterNum[i]
+            priceAddition()
             tolocal()
         });
    });
@@ -257,6 +253,8 @@ function counter() {
             counterNum[i] -= 1
             ifCounterSmallerThanZero(i)
             counters[i].textContent = counterNum[i]
+            console.log(counterNum);
+            priceAddition()
             tolocal()
         });
     });
@@ -268,3 +266,26 @@ function counter() {
     }
 }
 counter()
+
+
+// function priceAddition() {
+//     let result = 0
+//     const priceValue = document.querySelectorAll('.tasks-item-price p');
+//     const sidebarResult = document.querySelector('.sidebar__result');
+//     priceValue.forEach(item => {
+//         result += (parseFloat(item.innerHTML));
+//         sidebarResult.innerHTML = result
+//     });
+// }
+function priceAddition() {
+    const sidebarResult = document.querySelector('.sidebar__result');
+    let result = 0
+    const priceArray = document.querySelectorAll('.tasks-item-price p');
+    priceArray.forEach((item, i) => {
+        priceArrayNumber[i] = parseInt(item.innerHTML)
+    });
+    counterNum.forEach((item,i) => {
+        result += (priceArrayNumber[i] * item)
+    })
+    sidebarResult.innerHTML = result
+}
