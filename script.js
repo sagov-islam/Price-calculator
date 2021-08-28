@@ -282,5 +282,7 @@ function priceAddition() {
     sidebarResult.innerHTML = result
     if (sidebarResult.innerHTML.length >= 17) {
         sidebarResult.style.fontSize = '15px'
+    } else {
+        sidebarResult.style.fontSize = '25px'
     }
 }
