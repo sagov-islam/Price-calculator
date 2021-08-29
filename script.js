@@ -11,7 +11,7 @@ const langBtn = document.querySelector('.header__select-lang-btn'),
 // ---------------------------------------------------------------------------
 const arrayTasks = [];
 let counterNum = [];
-const counterPrice = [];
+let counterPrice = [];
 let priceArrayNumber = [];
 
 
@@ -251,7 +251,6 @@ function counter() {
             counterNum[i] -= 1
             ifCounterSmallerThanZero(i)
             counters[i].textContent = counterNum[i]
-            console.log(counterNum);
             priceAddition()
             tolocal()
         });
@@ -286,3 +285,51 @@ function priceAddition() {
         sidebarResult.style.fontSize = '25px'
     }
 }
+
+
+
+// Clearing the task list
+function ClearingTheTaskList() {
+    const modal = document.querySelector('.modal');
+    const modalButtonOpen = document.querySelector('.sidebar__button-clean');
+    const modalButtonClose = document.querySelector('.modal__btn-close');
+    const modalButtonYes = document.querySelector('.btn-yes');
+    const modalButtonNo = document.querySelector('.btn-no');
+
+    modalButtonOpen.addEventListener('click', () => {
+        modal.classList.toggle('hide')
+    });
+
+    modalButtonYes.addEventListener('click', () => {
+            const sidebarResult = document.querySelector('.sidebar__result');
+            list.innerHTML = '';
+            priceArrayNumber = [];
+            counterPrice = [];
+            counterNum = [];
+            sidebarResult.innerHTML = 0;
+            tasksLength ()
+            tolocal();
+            modal.classList.add('hide')
+    });
+
+    modalButtonClose.addEventListener('click', () => {
+        modal.classList.add('hide')
+    });
+
+    modalButtonNo.addEventListener('click', () => {
+        modal.classList.add('hide')
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.code === 'Escape' && modal.classList == 'modal') {
+            modal.classList.add('hide')
+        }
+    })
+
+    modal.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.classList.add('hide')
+        };
+    });
+}
+ClearingTheTaskList()

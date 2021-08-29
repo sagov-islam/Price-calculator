@@ -1,7 +1,7 @@
 
 :root {
-    --blue: #55A3FF;
-    --blue-hover: #3391FF;
+    --blue: #4099ff;
+    --blue-hover: #5ca8ff;
     --blue-active: #3391FF;
     --red: #FF6161;
     --black: #434343;
@@ -561,6 +561,7 @@ hr {
 
 .modal {
     position: fixed;
+    z-index: 3;
     top: 0;
     left: 0;
     display: flex;
