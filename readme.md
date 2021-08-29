@@ -1,1 +1,1 @@
-# Price calculator
+# Price calculator / Калькулятор расчета стоимости
